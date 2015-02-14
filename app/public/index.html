@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Playback</title>
+        <script src="http://cdn.binaryjs.com/0/binary.js"></script>
+        <script src="assets/js/lib/jsmpeg.js"></script>
+        <script type="text/javascript">
+            var client = new BinaryClient('ws://localhost:3031');
+            var canvas = document.getElementById('play-canvas');
+            var player = new jsmpeg(client, { canvas: canvas, autoplay: true });
+
+            client.on('open', function() {
+                var stream = client.createStream({ mediaId: 1, type: 'read' });
+            });
+        </script>
+    </head>
+    <body>
+        <canvas style="width: 200px; height: 200px;" id="play-canvas"></canvas>
+    </body>
+</html>

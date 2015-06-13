@@ -1,5 +1,5 @@
 {
-    "name": "application-name",
+    "name": "playback",
     "version": "0.0.1",
-    "main": "app/public/index.html"
+    "main": "app/index.html"
 }
